@@ -63,6 +63,11 @@ case "${LANG:-}" in
     * ) text="Type password to unlock" ;; # Default to English
 esac
 
+# Custom text, VisualBasic GUI style
+case "${LANG:-}" in
+    en_* ) text="ENTER ACCESS KEY";;
+esac
+
 while true ; do
     case "$1" in
         -h|--help)
