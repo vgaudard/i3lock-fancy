@@ -130,6 +130,11 @@ if ! "${i3lock_cmd[@]}" "${param[@]}" >/dev/null 2>&1; then
     "${i3lock_cmd[@]}"
 fi
 
+while pgrep i3lock; do
+    xset dpms force off
+    sleep 60;
+done
+
 # As above, if we were passed -d/--desktop, we'll attempt to restore all windows
 # after unlocking.
 ${desktop} ${desktop:+-k off}
